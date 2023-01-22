@@ -8,21 +8,20 @@ public class ToggleWord {
 		// TODO Auto-generated method stub
 
 		String s="this is java";
-		s=s.toUpperCase();
-		String s1="";
-
+        String toggle="";
 		String[] arr = s.split(" ");
-		
-		for(int i=0;i<=arr.length-1;i++) {
-			StringBuffer sb= new StringBuffer(arr[i]).reverse();
-			String f=sb.substring(0,1).toLowerCase();
+		for(String w:arr) {
+			StringBuffer sb=new StringBuffer(w);
+			sb.reverse();
+			String f=sb.substring(0,1);
 			String l=sb.substring(1);
-			StringJoiner sj = new StringJoiner(f,l," ");
-			s1=s1+sj;
+			toggle+=f.toLowerCase()+l.toUpperCase()+" ";
 			
-	}
 
-		System.out.println(s1);
+	}
+		System.out.println(toggle);
+
+		
 
 }
 }
