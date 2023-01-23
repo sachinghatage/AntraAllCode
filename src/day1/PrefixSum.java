@@ -5,7 +5,7 @@ public class PrefixSum {
 		// TODO Auto-generated method stub
 
 		int[] a= {2,3,4,5,6,7};
-		int[][] b= {{1,3},{1,5}};
+		int[][] b= {{0,3},{1,3}};
 		int n=a.length;
 		int[] pf=new int[n];
 		pf[0]=a[0];
@@ -23,7 +23,10 @@ public class PrefixSum {
 			 if(q.length>1) {
 				s=q[0];
 				e=q[1];
-				sum=pf[e]-pf[s-1];
+				if(j==0)
+				sum=pf[e];
+				else 
+					sum=pf[e]-pf[s-1];
 			}
 			
 
